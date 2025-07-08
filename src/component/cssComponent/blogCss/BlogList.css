@@ -1,0 +1,17 @@
+/* START: News List Container */
+.news-list {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+  display: flex;
+  flex-direction: column;
+}
+/* END: News List Container */
+
+.blog-section {
+  padding-left: 32px;
+}
+
+.blog-container {
+  padding-left: 0;
+} 

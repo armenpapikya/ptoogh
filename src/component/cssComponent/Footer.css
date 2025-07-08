@@ -1,0 +1,203 @@
+.footer {
+  background-color: #1A1A1A;
+  color: #ffffff;
+  padding: 60px 0;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.footer-contact,
+.footer-links,
+.footer-social {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-contact {
+  gap: 20px;
+}
+
+.footer-contact h4,
+.footer-links h4,
+.footer-social h4 {
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.footer-contact a,
+.footer-links a {
+  color: #cccccc;
+  text-decoration: none;
+  margin-bottom: 15px;
+  font-size: 16px;
+  transition: color 0.2s;
+}
+
+.footer-contact a:hover,
+.footer-links a:hover {
+  color: #ffffff;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #cccccc;
+}
+
+.contact-icon {
+  font-size: 20px;
+  color: #228c47;
+}
+
+.contact-item span {
+  font-size: 14px;
+}
+
+.footer-social .social-icons {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-social .social-icons a {
+  color: #cccccc;
+  font-size: 24px;
+  transition: color 0.2s;
+}
+
+.footer-social .social-icons a:hover {
+  color: #228c47;
+}
+
+@media (max-width: 900px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 32px;
+    padding: 0 16px;
+  }
+  
+  .footer-contact,
+  .footer-links,
+  .footer-social {
+    gap: 16px;
+  }
+  
+  .footer-contact h4,
+  .footer-links h4,
+  .footer-social h4 {
+    margin-bottom: 16px;
+    font-size: 16px;
+  }
+  
+  .footer-contact a,
+  .footer-links a {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+  
+  .contact-item span {
+    font-size: 13px;
+  }
+  
+  .footer-social .social-icons a {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer {
+    padding: 40px 0;
+  }
+  
+  .footer-container {
+    gap: 24px;
+    padding: 0 16px;
+  }
+  
+  .footer-contact h4,
+  .footer-links h4,
+  .footer-social h4 {
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+  
+  .footer-contact a,
+  .footer-links a {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  
+  .contact-info {
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  
+  .contact-item span {
+    font-size: 12px;
+  }
+  
+  .footer-social .social-icons {
+    gap: 16px;
+  }
+  
+  .footer-social .social-icons a {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 400px) {
+  .footer {
+    padding: 32px 0;
+  }
+  
+  .footer-container {
+    gap: 20px;
+    padding: 0 12px;
+  }
+  
+  .footer-contact h4,
+  .footer-links h4,
+  .footer-social h4 {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .footer-contact a,
+  .footer-links a {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+  
+  .contact-info {
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  
+  .contact-item span {
+    font-size: 11px;
+  }
+  
+  .footer-social .social-icons {
+    gap: 12px;
+  }
+  
+  .footer-social .social-icons a {
+    font-size: 16px;
+  }
+} 

@@ -1,0 +1,86 @@
+/* START: AboutHeroCarousel */
+.about-hero-carousel {
+  background: #f6f7fa;
+  border-radius: 16px;
+  padding: 24px 0 0 0;
+  margin-bottom: 32px;
+}
+
+.about-hero-carousel__actions {
+  display: flex;
+  gap: 16px;
+  padding: 0 0 16px 24px;
+}
+
+.about-hero-btn {
+  background: #d6e7d9;
+  color: #2d3a4a;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.about-hero-btn:hover {
+  background: #b7d2bc;
+}
+
+.about-hero-carousel__slider {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.about-hero-slide img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+}
+
+.about-hero-dots {
+  bottom: -32px !important;
+}
+.about-hero-dot {
+  width: 10px;
+  height: 10px;
+  background: #d6e7d9;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 4px;
+}
+.slick-dots .slick-active .about-hero-dot {
+  background: #3a7d3b;
+}
+
+@media (max-width: 900px) {
+  .about-hero-slide img {
+    height: 220px;
+  }
+  .about-hero-carousel__actions {
+    padding-left: 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-hero-carousel {
+    padding: 4px 0 0 0;
+    border-radius: 4px;
+  }
+  .about-hero-slide img {
+    height: 80px;
+    border-radius: 4px;
+    width: 100vw;
+    max-width: 100vw;
+    object-fit: cover;
+    display: block;
+  }
+  .about-hero-carousel__actions {
+    padding-left: 2px;
+    gap: 4px;
+  }
+}
+/* END: AboutHeroCarousel */ 

@@ -1,0 +1,141 @@
+/* START: NewsSlider Container */
+.news-slider {
+  width: 100%;
+  position: relative;
+  margin-bottom: 64px;
+}
+
+.news-slider-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* END: NewsSlider Container */
+
+/* START: News Slide */
+.news-slide {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+  padding: 0;
+  max-width: 900px;
+  width: 100%;
+  gap: 0;
+  margin: 0 auto;
+}
+
+/* END: News Slide */
+
+/* START: News Slide Content */
+.news-slide-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.news-slide-content h2 {
+  font-size: 24px;
+  margin: 0 0 12px 0;
+  color: #222;
+}
+
+.news-slide-content p {
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 18px;
+}
+
+.news-slide-btn {
+  display: inline-block;
+  background: #25784A;
+  color: #fff;
+  border-radius: 30px;
+  padding: 10px 24px;
+  text-decoration: none;
+  font-size: 15px;
+  transition: background 0.2s;
+}
+
+.news-slide-btn:hover {
+  background: #195a32;
+}
+
+/* END: News Slide Content */
+
+/* START: News Slide Image */
+.news-slide img {
+  width: 260px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+/* END: News Slide Image */
+
+/* START: Slick Dots Customization */
+.slick-dots.custom-dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -40px;
+  width: 100%;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.slick-dots.custom-dots li {
+  margin: 0 4px;
+}
+
+.slick-dots.custom-dots li button:before {
+  font-size: 12px;
+  color: #25784A;
+  opacity: 0.3;
+}
+
+.slick-dots.custom-dots li.slick-active button:before {
+  color: #25784A;
+  opacity: 1;
+}
+
+.custom-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #25784A;
+  opacity: 0.3;
+  display: inline-block;
+}
+
+.slick-dots.custom-dots li.slick-active .custom-dot {
+  opacity: 1;
+}
+
+/* END: Slick Dots Customization */
+
+.news-slider .slick-slide {
+  min-height: 200px;
+  display: flex !important;
+  align-items: center;
+}
+
+.news-slider .slick-slide > div {
+  display: flex !important;
+  align-items: center;
+  height: 100%;
+}
+
+.news-slider .slick-slide > div > div {
+  display: flex !important;
+  align-items: center;
+  width: 100%;
+}
+
+.sectionHeader h2 {
+  padding-left: 34px;
+}
