@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import HeroSection from './HeroSection';
@@ -30,12 +30,22 @@ const MainPage = () => {
       const logoData = await logoResponse.json();
       const teamData = teamResponse.ok ? await teamResponse.json() : [];
       
-      const ptooghLogo = logoData.find(img => img.name === 'Logo');
+      console.log('Logo data:', logoData);
+      console.log('Looking for ptoogh.png filename...');
+      const ptooghByFilename = logoData.find(img => img.filename === 'ptoogh.png');
+      console.log('Found by filename:', ptooghByFilename);
+      
+      const ptooghLogo = ptooghByFilename || logoData.find(img => img.name === 'Ptoogh Logo') || logoData.find(img => img.name === 'Logo');
+      console.log('Final ptoogh logo:', ptooghLogo);
       
       if (ptooghLogo) {
-        setPtooghImg(`http://localhost:5000/api/image-blob/${ptooghLogo.id}`);
+        const imageUrl = `http://localhost:5000/api/image-blob/${ptooghLogo.id}`;
+        console.log('Setting ptoogh image URL:', imageUrl);
+        setPtooghImg(imageUrl);
+      } else {
+        console.log('No ptoogh logo found, using fallback');
+        setPtooghImg('http://localhost:5000/images/ptoogh.png');
       }
-      
       setTeamImages(teamData.slice(0, 2));
     } catch (error) {
       console.error('Error fetching images:', error);
@@ -53,7 +63,23 @@ const MainPage = () => {
     if (loading) {
       return (
         <div className="about-images">
-          <div className="loading-spinner">Բեռնվում է...</div>
+                      <div className="loading-spinner">
+              <div className="spinner"></div>
+              <p>{t('loading')}</p>
+            </div>
+        </div>
+      );
+    }
+    
+    if (error) {
+      return (
+        <div className="about-images">
+          <div className="error-state">
+            <p>Սխալ: {error}</p>
+            <button onClick={fetchImages} className="retry-btn">
+              Կրկին փորձել
+            </button>
+          </div>
         </div>
       );
     }
@@ -72,7 +98,7 @@ const MainPage = () => {
                 }}
               />
               <div className="image-placeholder" style={{display: 'none'}}>
-                <p>Team {index + 1}</p>
+                <p>{t('team')} {index + 1}</p>
               </div>
             </div>
           ))}
@@ -84,17 +110,17 @@ const MainPage = () => {
       <div className="about-images">
         <div className="about-image">
           <div className="image-placeholder" style={{display: 'flex'}}>
-            <p>Team 1</p>
+            <p>{t('team')} 1</p>
           </div>
         </div>
         <div className="about-image">
           <div className="image-placeholder" style={{display: 'flex'}}>
-            <p>Team 2</p>
+            <p>{t('team')} 2</p>
           </div>
         </div>
       </div>
     );
-  }, [loading, teamImages]);
+  }, [loading, teamImages, error, fetchImages, t]);
 
   return (
     <div className="main-page">
@@ -103,16 +129,16 @@ const MainPage = () => {
       <section className="about-section">
         <div className="about-container">
           <div className="about-header">
-            <h2>Մեր մասին</h2>
-            <button className="view-all-btn">Դիտել բոլորը</button>
+            <h2>{t('about_us')}</h2>
+            <button className="view-all-btn">{t('see_more')}</button>
           </div>
           <div className="about-content">
             <div className="about-text">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                {t('about_text_1')}
               </p>
               <p>
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                {t('about_text_2')}
               </p>
             </div>
             {aboutSectionContent}
